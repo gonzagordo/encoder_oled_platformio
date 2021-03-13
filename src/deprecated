@@ -1,0 +1,69 @@
+/*
+void _deprecated_encoder()  {           //Funcion que determina el sentido del giro del encoder
+  static unsigned long ultimaInterrupcion = 0;  // variable static con ultimo valor de
+                                                // tiempo de interrupcion
+  unsigned long tiempoInterrupcion = millis();  // variable almacena valor de func. millis
+
+  if (tiempoInterrupcion - ultimaInterrupcion > 5) {  // No lee posibles rebotes en pulsos menores a 5 mseg.
+    if (digitalRead(CLK) == HIGH)     // si CLK es HIGH, rotacion a la derecha
+    {
+      posicion_encoder++ ;        // incrementa posicion del menu en 1
+    }
+    else {          // si CLK es LOW, rotacion a la izquierda
+      posicion_encoder-- ;        // decrementa posicion del menu en 1
+    }
+
+    posicion_encoder = min(5, max(0, posicion_encoder));  // numero de opciones del Menu, inferior 0 superior en 5
+    ultimaInterrupcion = tiempoInterrupcion;  //actualiza valor del tiempo tiempo
+  }           
+}
+*/
+
+/*
+void accion1()  {           // Funcion que enciende o apaga los LEDs
+  if(posicion_encoder==5){
+  digitalWrite(8,LOW);digitalWrite(9,LOW);digitalWrite(10,LOW);digitalWrite(11,LOW);digitalWrite(12,LOW);
+  }
+  else digitalWrite((posicion_encoder+8),HIGH);
+}
+*/
+
+
+  /*
+  if (digitalRead(btn) == LOW)     // Si es oprimido el Swich del Encoder
+    {
+      digitalWrite(LED,HIGH); // Enciende el LED del Pin 13
+      accion1();                  // llama a la Funcion que enciende el LED segun Menu  o los apaga
+      Serial.println(menu1[posicion_encoder]); // Muestra el valor de la posicion del  menu 
+      lcd.setCursor(9,1);
+      lcd.print(menu1[posicion_encoder]);
+      //**********pantallazo oled++++++++++++
+      oled.clearDisplay();
+      oled.setCursor(0,0);
+      oled.println("pulsado");  
+      oled.print(menu1[posicion_encoder]);
+      oled.print(" ON ");
+      oled.display();
+      //**********pantallazo oled++++++++++++
+      
+
+      delay(700);                 // retardo para que no se lea varias veces el swich del Encoder
+      digitalWrite(LED_btn,LOW);  // apaga el LED del Pin 13
+    }
+    */
+  
+  /*
+  if (posicion_encoder != ant_posicion) { // Si la posicion del menu es  distinta a la anterior
+    Serial.println(menu1[posicion_encoder]); // muestra la nueva posicion del Menu
+    lcd.setCursor(0,1);
+    lcd.print(menu1[posicion_encoder]);
+    //**********pantallazo oled++++++++++++
+      oled.clearDisplay();
+      oled.setCursor(0,0);
+      oled.println("seleccion:");  
+      oled.print(menu1[posicion_encoder]);
+      oled.display();
+      //**********pantallazo oled++++++++++++
+    ant_posicion = posicion_encoder ; // actualiza la posicion del menu
+  }
+  */
